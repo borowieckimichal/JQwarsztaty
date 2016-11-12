@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>ZADANIE ROZGRZEWKOWE</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+          /* $.get('http://date.jsontest.com').done(function(data) {
+               console.log(data);
+               
+               
+           }); */
+           $(function(){
+           var kolory = $('#kolory');
+           $.getJSON('test.php').done(function(colors) {
+             // console.log(json);
+           
+           for(var i =0; i<colors.length; i++) {
+               $('<div style="background-color: #' + colors[i] + '">' +colors[i] + 
+                       '</div>').appendTo(kolory);
+               
+               
+           }
+           
+           }); 
+        });
+           
+        </script>
+    </head>
+    <body>
+        <div id="kolory">
+            
+            
+        </div>
+    </body>
+</html>
